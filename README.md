@@ -17,11 +17,5 @@ This repository contains all my daily codes, practice exercises, and projects fr
 
 ## 📌 Progress Tracking  
 Each folder will represent a **day (Day 1 → Day 90)**, containing the codes and projects I built that day.  
-
-
-## 📌 Daily Progress  
-- [Day 03](./Day-03/README.md) → Basic HTML structure and first webpage  
-- [Day 04](./Day-04) → Introduction to CSS  
-- [Day 05](./Day-05) → css practise
 -   
 
