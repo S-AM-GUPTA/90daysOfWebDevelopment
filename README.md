@@ -1,2 +1,21 @@
-# 90daysOfWebDevelopment
-💻 A complete record of my 90 Days of Web Development Challenge — covering frontend, backend, and full-stack projects. This repo will include all practice codes, projects, and daily progress as I learn and apply HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and more.
+# 90 Days Full Stack Web Development Challenge  
+
+This repository contains all my daily codes, practice exercises, and projects from my 90-day journey to mastering **full-stack web development**.  
+
+## 📅 Challenge Goals  
+- Strengthen the foundations of **HTML, CSS, and JavaScript**.  
+- Build interactive **frontend projects** with React.  
+- Learn **backend development** with Node.js, Express, and databases like MongoDB.  
+- Create **full-stack applications** that combine frontend + backend.  
+- Document daily progress to stay consistent and accountable.  
+
+## 🛠 Tech Stack  
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+), React  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB (and possibly MySQL later)  
+- **Version Control:** Git & GitHub  
+
+## 📌 Progress Tracking  
+Each folder will represent a **day (Day 1 → Day 90)**, containing the codes and projects I built that day.  
+
+
