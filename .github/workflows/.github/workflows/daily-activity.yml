@@ -1,0 +1,46 @@
+name: Daily Activity
+
+on:
+  schedule:
+    - cron: "23 5 * * *" # Runs every day at 05:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update progress
+        run: |
+          mkdir -p progress
+
+          TODAY=$(date +"%Y-%m-%d")
+          TIME=$(date +"%H:%M:%S")
+
+          echo "## Daily Progress" > progress/README.md
+          echo "" >> progress/README.md
+          echo "**Last Updated:** $TODAY $TIME" >> progress/README.md
+          echo "" >> progress/README.md
+          echo "- Reviewing HTML" >> progress/README.md
+          echo "- Improving CSS" >> progress/README.md
+          echo "- Learning JavaScript" >> progress/README.md
+          echo "- Building projects" >> progress/README.md
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add progress/README.md
+
+          git diff --cached --quiet && exit 0
+
+          git commit -m "chore: daily learning update"
+
+          git push
