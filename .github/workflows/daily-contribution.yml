@@ -1,0 +1,29 @@
+name: Daily Auto Contribution
+
+on:
+  schedule:
+    - cron: '30 4 * * *'  # Runs at 4:30 AM UTC = 10:00 AM IST every day
+  workflow_dispatch:        # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  contribute:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Make Daily Contribution
+        run: |
+          DATE=$(date +'%Y-%m-%d')
+          echo "- System check completed on $DATE. All services operating normally." >> PROJECT_STATUS.md
+
+      - name: Commit and Push
+        run: |
+          git config user.email "samfgst3@gmail.com"
+          git config user.name "Saksham gupta"
+          git add PROJECT_STATUS.md
+          git diff --cached --quiet || git commit -m "docs: update project status log for $(date +'%Y-%m-%d')"
+          git push
